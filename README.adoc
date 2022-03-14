@@ -1,0 +1,109 @@
+= JPdfBookmarks-Maven-Patch
+life888888
+:doctype: article
+:encoding: utf-8
+:lang: zh
+:toc: left
+:numbered:
+:experimental:
+
+JPdfBookmarks-Maven-Patch can help you mirgrate JPdfBookmarks 2.5.2 from ANT to Maven automatically.
+
+Or You can just download https://github.com/life888888/JPdfBookmarks/archive/refs/tags/v2.5.2-maven.tar.gz (This is the result after I have done the patch action for you.) or do it yourself again by download this project.
+
+== System requirement
+
+* Linux
+* JDK 8
+* Maven 3.6+
+ 
+== HOW TO EXECUTE
+
+=== Download jpdfbookmarks-src-2.5.2.tar.gz
+
+Download jpdfbookmarks-src-2.5.2.tar.gz (https://sourceforge.net/projects/jpdfbookmarks/files/JPdfBookmarks-2.5.2/jpdfbookmarks-src-2.5.2.tar.gz/download)
+
+=== Unzip jpdfbookmarks-src-2.5.2.tar.gz
+
+Unzip jpdfbookmarks-src-2.5.2.tar.gz
+
+=== Download JPdfBookmarks-Maven-Patch
+* Download https://github.com/life888888/JPdfBookmarks-Maven-Patch/archive/refs/tags/v2.5.2.tar.gz
+
+=== Unzip JPdfBookmarks-Maven-Patch-2.5.2.tar.gz
+** unzip JPdfBookmarks-Maven-Patch-2.5.2.tar.gz
+
+=== Move JPdfBookmarks-Maven-Patch-2.5.2 source to jpdfbookmarks-src-2.5.2
+* Move JPdfBookmarks-Maven-Patch-2.5.2 source to jpdfbookmarks-src-2.5.2
+
+After finish, the jpdfbookmarks-src-2.5.2 folder will looks like below:
+
+[source,bash]
+----
+├── LICENSE
+├── pom.xml
+├── README.adoc
+├── clean-convert-to-maven.sh
+├── convert-to-maven-Bookmark.sh
+├── convert-to-maven-CollapsingPanel.sh
+├── convert-to-maven-Colors.sh
+├── convert-to-maven-iText-2.1.7-patched.sh
+├── convert-to-maven-iTextBookmarksConverter.sh
+├── convert-to-maven-jpdfbookmarks_core.sh
+├── convert-to-maven-jpdfbookmarks_graphics.sh
+├── convert-to-maven-jpdfbookmarks_languages.sh
+├── convert-to-maven-jpdfbookmarks_lib.sh
+├── convert-to-maven-Packaging.sh
+├── convert-to-maven-ResourceHelper.sh
+├── convert-to-maven.sh
+├── convert-to-maven-Utilities.sh
+├── Bookmark
+├── CollapsingPanel
+├── Colors
+...
+----
+
+=== Run convert-to-maven.sh
+
+[source,bash]
+----
+./convert-to-maven.sh
+./clean-convert-to-maven.sh
+----
+
+Now you get a jpdfbookmarks-src-2.5.2-maven version.
+
+=== Do it once before the first execution 
+
+.Install jpedal_lgpl.jar to the local maven repository
+[source,bash]
+----
+cd JPdfBookmarks-2.5.2-maven/jpdfbookmarks_lib
+./install_lib.sh
+
+# Windows
+install_lib.bat
+----
+
+
+=== Build and Package
+
+[source,bash]
+----
+cd JPdfBookmarks-2.5.2-maven
+mvn clean package
+
+cd jpdfbookmarks_core/target
+----
+
+your can find:
+
+* Binary Release
+** jpdfbookmarks-2.5.2.tar.gz
+** jpdfbookmarks-2.5.2.zip
+
+* Source Release
+** jpdfbookmarks-src-2.5.2.tar.gz
+** jpdfbookmarks-src-2.5.2.zip
+
+
