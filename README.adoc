@@ -63,16 +63,6 @@ After finish, the jpdfbookmarks-src-2.5.2 folder will looks like below:
 ...
 ----
 
-=== Run convert-to-maven.sh
-
-[source,bash]
-----
-./convert-to-maven.sh
-./clean-convert-to-maven.sh
-----
-
-Now you get a jpdfbookmarks-src-2.5.2-maven version.
-
 === Do it once before the first execution 
 
 .Install jpedal_lgpl.jar to the local maven repository
@@ -84,6 +74,17 @@ cd JPdfBookmarks-2.5.2-maven/jpdfbookmarks_lib
 # Windows
 install_lib.bat
 ----
+
+=== Run convert-to-maven.sh
+
+[source,bash]
+----
+./convert-to-maven.sh
+./clean-convert-to-maven.sh
+----
+
+Now you get a jpdfbookmarks-src-2.5.2-maven version.
+
 
 
 === Build and Package
